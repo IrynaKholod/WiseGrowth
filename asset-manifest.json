@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/WiseGrowth/static/css/main.8a663f75.css",
+    "main.js": "/WiseGrowth/static/js/main.a5efbaa9.js",
+    "static/js/527.86f0eada.chunk.js": "/WiseGrowth/static/js/527.86f0eada.chunk.js",
+    "static/js/315.0d2f6d6d.chunk.js": "/WiseGrowth/static/js/315.0d2f6d6d.chunk.js",
+    "static/js/256.dd8e93da.chunk.js": "/WiseGrowth/static/js/256.dd8e93da.chunk.js",
+    "static/js/421.768468b9.chunk.js": "/WiseGrowth/static/js/421.768468b9.chunk.js",
+    "static/js/243.52da0d92.chunk.js": "/WiseGrowth/static/js/243.52da0d92.chunk.js",
+    "static/js/494.fddf4dcc.chunk.js": "/WiseGrowth/static/js/494.fddf4dcc.chunk.js",
+    "index.html": "/WiseGrowth/index.html",
+    "main.8a663f75.css.map": "/WiseGrowth/static/css/main.8a663f75.css.map",
+    "main.a5efbaa9.js.map": "/WiseGrowth/static/js/main.a5efbaa9.js.map",
+    "527.86f0eada.chunk.js.map": "/WiseGrowth/static/js/527.86f0eada.chunk.js.map",
+    "315.0d2f6d6d.chunk.js.map": "/WiseGrowth/static/js/315.0d2f6d6d.chunk.js.map",
+    "256.dd8e93da.chunk.js.map": "/WiseGrowth/static/js/256.dd8e93da.chunk.js.map",
+    "421.768468b9.chunk.js.map": "/WiseGrowth/static/js/421.768468b9.chunk.js.map",
+    "243.52da0d92.chunk.js.map": "/WiseGrowth/static/js/243.52da0d92.chunk.js.map",
+    "494.fddf4dcc.chunk.js.map": "/WiseGrowth/static/js/494.fddf4dcc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a663f75.css",
+    "static/js/main.a5efbaa9.js"
+  ]
+}
