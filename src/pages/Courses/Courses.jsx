@@ -29,7 +29,8 @@ const Courses = () => {
     if (!courses.length) {
       fetchCourses();
     }
-   }, [courses.length]);
+  }, [courses.length]);
+  
 
   const indexOfLastCourse = currentPage * perPage;
   const indexOfFirstCourse = indexOfLastCourse - perPage;
