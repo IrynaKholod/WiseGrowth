@@ -25,9 +25,6 @@ const Course = () => {
 
   useEffect(() => {
     async function fetchCourseByID() {
-      if (!course) {
-        return;
-      }
       try {
         const response = await GetCourseById(courseId);
         if (response) {

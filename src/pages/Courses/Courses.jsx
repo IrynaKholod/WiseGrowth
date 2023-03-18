@@ -12,9 +12,6 @@ const Courses = () => {
 
   useEffect(() => {
     async function fetchCourses() {
-      if (!courses) {
-        return;
-      }
       setIsLoading(true);
       try {
         const response = await GetAllCourses();
@@ -28,8 +25,11 @@ const Courses = () => {
         console.log(`Error: ${error.message}`);
       }
     }
-    fetchCourses();
-  }, []);
+    
+    if (!courses.length) {
+      fetchCourses();
+    }
+   }, [courses.length]);
 
   const indexOfLastCourse = currentPage * perPage;
   const indexOfFirstCourse = indexOfLastCourse - perPage;
