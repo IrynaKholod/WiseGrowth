@@ -6,7 +6,7 @@ export const SharedLayout = () => {
   const [logoLoaded, setLogoLoaded] = useState(false);
 
   useEffect(() => {
-    setLogoLoaded(true); // устанавливаем класс при загрузке страницы
+    setLogoLoaded(true); 
   }, []);
 
   return (
