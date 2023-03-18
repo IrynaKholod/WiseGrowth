@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, Suspense } from "react";
-import { Link, useLocation, Outlet } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 import {
   ItemCourse,
   ItemImg,
