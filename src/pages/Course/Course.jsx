@@ -90,7 +90,8 @@ const Course = () => {
             <VideoCourse
               id={courseId}
               controls
-              poster={`${currentLesson?.previewImageLink}/lesson.order.webp`}
+              width="100%"
+              autoPlay 
               onTimeUpdate={e => saveCurrentTimeVideo(e)}
             ></VideoCourse>
           ) : (

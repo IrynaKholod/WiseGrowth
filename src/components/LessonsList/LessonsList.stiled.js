@@ -8,7 +8,7 @@ export const LessonsListStyle = styled.ul`
 
 export const LessonsListItem = styled.li`
   font-size: 20px;
-
+  cursor: pointer;
   margin-bottom: 10px;
   &:hover {
     color: rgba(72, 37, 209, 255);

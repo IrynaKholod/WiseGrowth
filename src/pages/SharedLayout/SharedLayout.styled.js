@@ -34,8 +34,13 @@ export const Logo = styled.p`
   font-size: 30px;
   font-weight: 500;
   margin: 0;
+  transform: scale(0.5); /* начальный размер */
+  transition: transform 0.5s ease-in-out; /* добавление плавного перехода */
+  
+  &.logo-loaded {
+    transform: scale(1); /* конечный размер */
+  }
 `;
-
 export const Wrapper = styled.div`
   background-color: white;
 `;
