@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://api.wisey.app/api/v1';
-// const PROXY_URL = "https://cors-proxy.fringe.zone/";
+const PROXY_URL = "https://cors-proxy.fringe.zone/";
 
 const instance = axios.create({
   baseURL: BASE_URL,
