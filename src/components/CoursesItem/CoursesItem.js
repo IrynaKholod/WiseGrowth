@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, Suspense } from "react";
-import { useLocation, Outlet } from "react-router-dom";
+import React, { useState, useRef, useEffect, Suspense } from 'react';
+import { useLocation, Outlet } from 'react-router-dom';
 import {
   ItemCourse,
   ItemImg,
@@ -9,8 +9,8 @@ import {
   Raitingline,
   LiItem,
   PreviwVideo,
-} from "./CoursesItem.styled";
-import { VideoPlayer } from "../../components/VideoPlayer/VideoPlayer";
+} from './CoursesItem.styled';
+import { VideoPlayer } from '../../components/VideoPlayer/VideoPlayer';
 
 const CoursesItem = ({ course }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -70,7 +70,7 @@ const CoursesItem = ({ course }) => {
           <ItemHeader>{course.title}</ItemHeader>
           <ListTitle>Skill you'll achieve:</ListTitle>
           <SkillsList>
-            {" "}
+            {' '}
             {course.meta.skills?.map((skill, index) => {
               return <li key={index}>{skill}</li>;
             })}

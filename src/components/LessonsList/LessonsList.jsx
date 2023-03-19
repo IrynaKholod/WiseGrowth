@@ -3,9 +3,9 @@ import {
   LessonsListItem,
   LockedIcon,
   LessonsListStyle,
-  LessonLink
+  LessonLink,
 } from './LessonsList.stiled';
-import {ImPointLeft} from "react-icons/im";
+import { ImPointLeft } from 'react-icons/im';
 
 const LessonsList = ({ course, setCurrentLesson, currentLesson }) => {
   const { lessons } = course || {};
@@ -19,13 +19,13 @@ const LessonsList = ({ course, setCurrentLesson, currentLesson }) => {
       <LessonsListStyle>
         {lessons.map(lesson => {
           const isActive = lesson === currentLesson;
-          const isLocked = lesson.status === "locked";
-          const linkClassName = isActive ? "active" : "";
+          const isLocked = lesson.status === 'locked';
+          const linkClassName = isActive ? 'active' : '';
           return (
             <LessonsListItem key={lesson.id}>
               <LessonLink
                 href={lesson.link}
-                onClick={(e) => {
+                onClick={e => {
                   e.preventDefault();
                   setCurrentLesson(lesson);
                 }}
@@ -33,7 +33,12 @@ const LessonsList = ({ course, setCurrentLesson, currentLesson }) => {
                 className={linkClassName}
               >
                 {lesson.title}
-                {isActive && <span> <ImPointLeft/></span>}
+                {isActive && (
+                  <span>
+                    {' '}
+                    <ImPointLeft />
+                  </span>
+                )}
               </LessonLink>
               {isLocked && (
                 <span>

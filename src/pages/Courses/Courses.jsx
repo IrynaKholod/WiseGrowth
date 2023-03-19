@@ -25,12 +25,11 @@ const Courses = () => {
         console.log(`Error: ${error.message}`);
       }
     }
-    
+
     if (!courses.length) {
       fetchCourses();
     }
   }, [courses.length]);
-  
 
   const indexOfLastCourse = currentPage * perPage;
   const indexOfFirstCourse = indexOfLastCourse - perPage;

@@ -3,7 +3,6 @@ import {
   PaginationBtn,
   PaginationBox,
   PaginationList,
-  // PaginationListItem,
 } from './Pagination.styled';
 
 export function Pagination({ currentPage, totalPages, setCurrentPage }) {

@@ -1,4 +1,4 @@
-import {  useState, useEffect , Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Container, Header, Logo, Wrapper } from './SharedLayout.styled';
 
@@ -6,7 +6,7 @@ export const SharedLayout = () => {
   const [logoLoaded, setLogoLoaded] = useState(false);
 
   useEffect(() => {
-    setLogoLoaded(true); 
+    setLogoLoaded(true);
   }, []);
 
   return (

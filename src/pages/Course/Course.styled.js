@@ -10,9 +10,9 @@ export const LessonWrapper = styled.div`
 
 export const VideoWrapper = styled.div`
   @media (min-width: 768px) {
-   flex: 1;
+    flex: 1;
   }
-`
+`;
 
 export const SideLessonInfo = styled.div`
   @media (min-width: 768px) {

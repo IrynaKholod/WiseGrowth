@@ -83,12 +83,12 @@ export const Raitingline = styled.p`
   align-items: flex-end;
 `;
 
-export const LiItem =styled.li`
+export const LiItem = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  `
+`;
 
 export const ListTitle = styled.p`
   margin-top: 20px;

@@ -77,13 +77,14 @@ const Course = () => {
     const timeoutId = setTimeout(() => {
       toast(
         <span>
-          Use <button> up </button> or <button> down </button> to adjust playback speed
+          Use ArrowUp / ArrowDown to adjust playback speed
         </span>,
         {
           style: {
             borderRadius: '10px',
             background: 'fff',
             color: '#4825D1',
+            padding: '17px'
           },
           duration: 7000,
         }
