@@ -1,70 +1,21 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Додаток реалізовано з використанням бібліотеки React. Для коректної роботи потрібно включити розширення для браузера Allow CORS: Access-Control-Allow-Origin.
 
-## Available Scripts
+Додаток використовує компоненти react-router-dom для реалізації маршрутизації. Для кожної сторінки створений окремий компонент, який відповідає за рендеринг відповідної сторінки. 
+Для динамічної завантаження компонентів на сторінці використаний функціональний компонент React.lazy.
 
-In the project directory, you can run:
+На головній сторінці передбачено спіннер, який відображається під час завантаження курсів з API. Також у додатку реалізована сторінка 404, яка відображатиметься у випадку, якщо користувач перейде неіснуючим маршрутом.
 
-### `npm start`
+Головна сторінка додатка - "Courses", яка рендерить перелік курсів з використанням GET запиту до API. Кожен курс має картку з зображенням, яке зникає при наведенні курсора, та відтворюється відео без звуку на його місці. Крім того, кожен курс містить заголовок, кількість уроків, навички та рейтинг.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Створена пагінація, яка містить кнопки prev та next, а також нумерацію сторінок. Кнопки prev та next стають неактивними, коли користувач знаходиться на першій або останній сторінці. Кожна сторінка виводить по 10 курсів.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+При натисканні на окремий курс на головній сторінці виконується перехід на сторінку курсу ":courseId". За допомогою GET запиту до API за id рендериться детальна інформація обраного курсу. На сторінці відтворено назву курсу, відео, опис та перелік уроків. Біля назви активного уроку з'являється іконка, яка показує місцезнаходження користувача в курсі. Заблоковані уроки також позначені іконками. При натисканні на заблокований урок на місці відео з'являється повідомлення з пропозицією придбати доступ.
 
-### `npm test`
+У додатку додано можливість зміни швидкості відтворення відео за допомогою клавіатури при натисканні ArrowUp/ArrowDown. Через дві секунди після завантаження сторінки toast-повідомлення з'являється повідомлення з інструкцією.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+На сторінці курсу присутня кнопка "Go back", яка повертає користувача на сторінку з курсами.
 
-### `npm run build`
+Прогрес перегляду кожного відео зберігається у LocalStorage, що дозволяє користувачам повертатись до розпочатих відео пізніше.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Додаток  адаптовано до мобільної версії з брейкпоінтом 786px.

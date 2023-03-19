@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { GetCourseById } from '../../Api/Api';
 import { useParams, useLocation } from 'react-router-dom';
 import { VideoPlayer } from '../../components/VideoPlayer/VideoPlayer';
@@ -12,7 +13,7 @@ import {
   LessonDescription,
   LessonWrapper,
   SideLessonInfo,
-  VideoWrapper
+  VideoWrapper,
 } from './Course.styled';
 
 const Course = () => {
@@ -20,6 +21,7 @@ const Course = () => {
   const [course, setCourse] = useState({});
   const [currentLesson, setCurrentLesson] = useState(null);
   const [startVideoWith, setstartVideoWith] = useState(-1);
+  const [playbackRate, setPlaybackRate] = useState(1);
 
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/courses';
@@ -66,11 +68,32 @@ const Course = () => {
     if (time) {
       setstartVideoWith(time);
     }
-    const hls = VideoPlayer(currentLesson.link, videoElement, startVideoWith);
+    const hls = VideoPlayer(
+      currentLesson.link,
+      videoElement,
+      startVideoWith,
+      playbackRate
+    );
+    const timeoutId = setTimeout(() => {
+      toast(
+        <span>
+          Use <button> up </button> or <button> down </button> to adjust playback speed
+        </span>,
+        {
+          style: {
+            borderRadius: '10px',
+            background: 'fff',
+            color: '#4825D1',
+          },
+          duration: 7000,
+        }
+      );
+    }, 2000);
     return () => {
+      clearTimeout(timeoutId);
       hls.destroy();
     };
-  }, [currentLesson, courseId, startVideoWith]);
+  }, [currentLesson, courseId, startVideoWith, playbackRate]);
 
   const saveCurrentTimeVideo = e => {
     if (!e.target.currentTime) {
@@ -80,6 +103,17 @@ const Course = () => {
       `Lesson-id-${currentLesson.id}`,
       JSON.stringify(Math.floor(e.target.currentTime))
     );
+  };
+
+  const handleKeyDown = e => {
+    if (currentLesson?.status === 'locked') {
+      return;
+    }
+    if (e.key === 'ArrowUp') {
+      setPlaybackRate(prev => prev + 0.25);
+    } else if (e.key === 'ArrowDown') {
+      setPlaybackRate(prev => prev - 0.25);
+    }
   };
 
   return (
@@ -95,6 +129,7 @@ const Course = () => {
               width="100%"
               autoPlay
               onTimeUpdate={e => saveCurrentTimeVideo(e)}
+              onKeyDown={handleKeyDown}
             ></VideoCourse>
           ) : (
             <MassegeTytle>
@@ -112,6 +147,7 @@ const Course = () => {
           />
         </SideLessonInfo>
       </LessonWrapper>
+      <Toaster />
     </>
   );
 };
