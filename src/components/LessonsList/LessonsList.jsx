@@ -5,8 +5,9 @@ import {
   LessonsListStyle,
   LessonLink
 } from './LessonsList.stiled';
+import {ImPointLeft} from "react-icons/im";
 
-const LessonsList = ({ course, setCurrentLesson }) => {
+const LessonsList = ({ course, setCurrentLesson, currentLesson }) => {
   const { lessons } = course || {};
 
   if (!lessons || !Array.isArray(lessons)) {
@@ -16,27 +17,33 @@ const LessonsList = ({ course, setCurrentLesson }) => {
   return (
     <div>
       <LessonsListStyle>
-        {lessons.map(lesson => (
-          <LessonsListItem key={lesson.id}>
-            <LessonLink
-              href={lesson.link}
-              onClick={e => {
-                e.preventDefault();
-                setCurrentLesson(lesson);
-                e.target.classList.add('active');
-              }}
-              disabled={lesson.status === 'locked'}
-            >
-              {lesson.title}
-            </LessonLink>
-            {lesson.status === 'locked' && (
-              <span>
-                {' '}
-                &nbsp; &nbsp; <LockedIcon />
-              </span>
-            )}
-          </LessonsListItem>
-        ))}
+        {lessons.map(lesson => {
+          const isActive = lesson === currentLesson;
+          const isLocked = lesson.status === "locked";
+          const linkClassName = isActive ? "active" : "";
+          return (
+            <LessonsListItem key={lesson.id}>
+              <LessonLink
+                href={lesson.link}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentLesson(lesson);
+                }}
+                disabled={isLocked}
+                className={linkClassName}
+              >
+                {lesson.title}
+                {isActive && <span> <ImPointLeft/></span>}
+              </LessonLink>
+              {isLocked && (
+                <span>
+                  {' '}
+                  &nbsp; &nbsp; <LockedIcon />
+                </span>
+              )}
+            </LessonsListItem>
+          );
+        })}
       </LessonsListStyle>
     </div>
   );

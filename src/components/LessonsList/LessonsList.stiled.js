@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { ImEyeBlocked } from 'react-icons/im';
+import { ImEyeBlocked,
+  } from 'react-icons/im';
 
 export const LessonsListStyle = styled.ul`
   margin-left: 15px;
@@ -10,6 +11,7 @@ export const LessonsListItem = styled.li`
   font-size: 20px;
   cursor: pointer;
   margin-bottom: 10px;
+
   &:hover {
     color: rgba(72, 37, 209, 255);
   }
@@ -21,8 +23,8 @@ export const LockedIcon = styled(ImEyeBlocked)`
 `;
 
 export const LessonLink =styled.a`
-&:active {
-  color: red;
-  font-weight: bold;
+&:active{
+  color: rgba(72, 37, 209, 255);
 }
+
 `

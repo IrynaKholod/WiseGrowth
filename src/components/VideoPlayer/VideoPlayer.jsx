@@ -1,6 +1,6 @@
 import Hls from 'hls.js';
 
-export const VideoPlayer = (link, videoElement, startPosition) => {
+export const VideoPlayer = (link, videoElement, startPosition, playbackRate) => {
   let hls = null;
   if (Hls.isSupported()) {
     hls = new Hls({ startPosition: startPosition });
@@ -15,6 +15,13 @@ export const VideoPlayer = (link, videoElement, startPosition) => {
     hls.loadSource(`${link}`);
     // bind them together
     hls.attachMedia(videoElement);
+
+    // Add playback rate functionality
+    if (playbackRate) {
+      videoElement.playbackRate = playbackRate;
+    }
   }
   return hls;
 };
+
+

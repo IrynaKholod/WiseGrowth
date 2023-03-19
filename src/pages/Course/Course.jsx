@@ -12,6 +12,7 @@ import {
   LessonDescription,
   LessonWrapper,
   SideLessonInfo,
+  VideoWrapper
 } from './Course.styled';
 
 const Course = () => {
@@ -22,6 +23,10 @@ const Course = () => {
 
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/courses';
+
+  const handleLessonClick = lesson => {
+    setCurrentLesson(lesson);
+  };
 
   useEffect(() => {
     async function fetchCourseByID() {
@@ -80,7 +85,7 @@ const Course = () => {
   return (
     <>
       <LessonWrapper>
-        <div>
+        <VideoWrapper>
           <BackLink to={backLinkHref}>Go back</BackLink>
           <CourseTitle>{course.title}</CourseTitle>
           {currentLesson?.status !== 'locked' ? (
@@ -96,11 +101,15 @@ const Course = () => {
               For viewing the video, please upgrade to a premium account.
             </MassegeTytle>
           )}
-        </div>
+        </VideoWrapper>
         <SideLessonInfo>
           <LessonDescription>{course.description}</LessonDescription>
           <LessonsTitle>Lessons:</LessonsTitle>
-          <LessonsList course={course} setCurrentLesson={setCurrentLesson} />
+          <LessonsList
+            course={course}
+            setCurrentLesson={handleLessonClick}
+            currentLesson={currentLesson}
+          />
         </SideLessonInfo>
       </LessonWrapper>
     </>

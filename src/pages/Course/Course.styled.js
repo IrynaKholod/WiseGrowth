@@ -4,11 +4,19 @@ import { NavLink } from 'react-router-dom';
 export const LessonWrapper = styled.div`
   @media (min-width: 768px) {
     display: flex;
+    flex-direction: row;
   }
 `;
 
+export const VideoWrapper = styled.div`
+  @media (min-width: 768px) {
+   flex: 1;
+  }
+`
+
 export const SideLessonInfo = styled.div`
   @media (min-width: 768px) {
+    flex: 1;
     margin-top: 105px;
     margin-left: 30px;
   }
@@ -28,8 +36,11 @@ export const CourseTitle = styled.h2`
 `;
 
 export const VideoCourse = styled.video`
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 15px;
+  @media (min-width: 768px) {
+    flex: 1;
+  }
 `;
 
 export const MassegeTytle = styled.h2`
