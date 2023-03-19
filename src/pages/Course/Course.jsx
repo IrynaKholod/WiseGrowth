@@ -127,7 +127,7 @@ const Course = () => {
               id={courseId}
               controls
               width="100%"
-              autoPlay
+              // autoPlay
               onTimeUpdate={e => saveCurrentTimeVideo(e)}
               onKeyDown={handleKeyDown}
             ></VideoCourse>
