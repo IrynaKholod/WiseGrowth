@@ -3,6 +3,7 @@ import {
   LessonsListItem,
   LockedIcon,
   LessonsListStyle,
+  LessonLink
 } from './LessonsList.stiled';
 
 const LessonsList = ({ course, setCurrentLesson }) => {
@@ -17,16 +18,17 @@ const LessonsList = ({ course, setCurrentLesson }) => {
       <LessonsListStyle>
         {lessons.map(lesson => (
           <LessonsListItem key={lesson.id}>
-            <a
+            <LessonLink
               href={lesson.link}
               onClick={e => {
                 e.preventDefault();
                 setCurrentLesson(lesson);
+                e.target.classList.add('active');
               }}
               disabled={lesson.status === 'locked'}
             >
               {lesson.title}
-            </a>
+            </LessonLink>
             {lesson.status === 'locked' && (
               <span>
                 {' '}
