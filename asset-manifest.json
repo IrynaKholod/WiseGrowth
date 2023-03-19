@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/WiseGrowth/static/css/main.3731f224.css",
-    "main.js": "/WiseGrowth/static/js/main.b10ae580.js",
+    "main.js": "/WiseGrowth/static/js/main.cb0744d3.js",
     "static/js/527.e758888a.chunk.js": "/WiseGrowth/static/js/527.e758888a.chunk.js",
-    "static/js/315.ccba3122.chunk.js": "/WiseGrowth/static/js/315.ccba3122.chunk.js",
+    "static/js/315.29750609.chunk.js": "/WiseGrowth/static/js/315.29750609.chunk.js",
     "static/js/256.dd8e93da.chunk.js": "/WiseGrowth/static/js/256.dd8e93da.chunk.js",
     "static/js/427.a41121df.chunk.js": "/WiseGrowth/static/js/427.a41121df.chunk.js",
     "static/js/243.52da0d92.chunk.js": "/WiseGrowth/static/js/243.52da0d92.chunk.js",
     "static/js/952.4e639066.chunk.js": "/WiseGrowth/static/js/952.4e639066.chunk.js",
     "index.html": "/WiseGrowth/index.html",
     "main.3731f224.css.map": "/WiseGrowth/static/css/main.3731f224.css.map",
-    "main.b10ae580.js.map": "/WiseGrowth/static/js/main.b10ae580.js.map",
+    "main.cb0744d3.js.map": "/WiseGrowth/static/js/main.cb0744d3.js.map",
     "527.e758888a.chunk.js.map": "/WiseGrowth/static/js/527.e758888a.chunk.js.map",
-    "315.ccba3122.chunk.js.map": "/WiseGrowth/static/js/315.ccba3122.chunk.js.map",
+    "315.29750609.chunk.js.map": "/WiseGrowth/static/js/315.29750609.chunk.js.map",
     "256.dd8e93da.chunk.js.map": "/WiseGrowth/static/js/256.dd8e93da.chunk.js.map",
     "427.a41121df.chunk.js.map": "/WiseGrowth/static/js/427.a41121df.chunk.js.map",
     "243.52da0d92.chunk.js.map": "/WiseGrowth/static/js/243.52da0d92.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.3731f224.css",
-    "static/js/main.b10ae580.js"
+    "static/js/main.cb0744d3.js"
   ]
 }
